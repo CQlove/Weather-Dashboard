@@ -1,17 +1,46 @@
+:root {
+    --main-bg-color: cornflowerblue;
+    --header-bg-color:rgb(62, 137, 191);
+    --white:#FFFFFF;
+    --gray:	#DCDCDC;
+  }
 *{
-    background-color: cornflowerblue;
+    background-color: var(--main-bg-color);
 }
 
 h1{
     display: block;
     text-align: center;
-    background-color: rgb(62, 137, 191);
+    background-color: var(--header-bg-color);
 }
 
 input{
-    background-color: white;
+    background-color: var(white);
+}
+#today{
+    background-color:var(--gray);  
 }
 
+#today p{
+    background-color:var(--gray);  
+}
+
+#today img{
+    background-color:var(--gray);  
+}
+
+#next-day{
+    background-color:var(--gray);
+    margin:5px;
+}
+
+#next-day p{
+    background-color:var(--gray);
+}
+
+#next-day img{
+    background-color: var(--gray);
+}
 
 ul li a{
     text-decoration: none;
@@ -19,5 +48,5 @@ ul li a{
 }
 
 ul li a:hover{
-    color: white;
+    color: var(--white);
 }

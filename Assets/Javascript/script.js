@@ -1,4 +1,3 @@
-
 const searchForm = document.getElementById("search-form");
 const cityInput = document.getElementById("city-input");
 const currentWeatherContainer = document.getElementById('current-weather');
@@ -72,11 +71,13 @@ function displayCurrentWeather(data1) {
 
   // creat string that has everything I need
   const weatherInfo = `
-    <h2>Current Weather in ${cityName} (${date})</h2>
-    <img src="http://openweathermap.org/img/wn/${icon}.png">
-    <p>Temperature: ${temperature} °F</p>
-    <p>Humidity: ${humidity} %</p>
-    <p>Wind Speed: ${windSpeed} MPH</p>
+    <h2 class="col">Current Weather in ${cityName} (${date})</h2>
+    <div id="today" class="col rounded">
+      <img src="http://openweathermap.org/img/wn/${icon}.png">
+      <p> Temperature: ${temperature} °F</p>
+      <p> Humidity: ${humidity} %</p>
+      <p> Wind Speed: ${windSpeed} MPH</p>
+    </div>
   `;
 
   // add into html
@@ -99,8 +100,8 @@ function displayForecast(data) {
 
     //creat everyday info
     const forecastHtml = `
-      <div class="col text-center">
-        <h2>${date}</h2>
+      <div id="next-day" class="col text-center rounded">
+        <p>${date}</p>
         <img src="http://openweathermap.org/img/wn/${icon}.png">
         <p>Temperature: ${temperature} °F</p>
         <p>Humidity: ${humidity} %</p>
@@ -115,27 +116,6 @@ function displayForecast(data) {
   // add all days into weatherInfo
   forecastContainer.innerHTML = weatherInfo;
 
-
-  // // const newH3 = document.createElement('h3');
-  // // newH3.classList.add = "col text-center"
-  // // newH3.textContent = 'This is the next 5 day\'s forecast'; 
-
-  // // // Insert the new div between current-weather and forecast
-  // // const parentElement = forecastContainer.parentElement;
-  // // parentElement.insertBefore(newH3, forecastContainer);
-  // if (!isNewH3Added) {
-  //   // Create a new div element
-  //   const newH3 = document.createElement('h3');
-  //   newH3.textContent = 'This is the next 5 day\'s forecast'; // Replace 'New div content' with the desired content for the new div
-  //   newH3.classList.add('col text-center'); // Add the desired class name using classList.add()
-
-  //   // Insert the new div between current-weather and forecast
-  //   const parentElement = forecastContainer.parentElement;
-  //   parentElement.insertBefore(newH3, forecastContainer);
-
-  //   // 将 isNewDivAdded 标志设置为 true，表示已经添加了新的 div 元素
-  //   isNewH3Added = true;
-  // }
 }
 
 
