@@ -4,6 +4,7 @@ const cityInput = document.getElementById("city-input");
 const currentWeatherContainer = document.getElementById('current-weather');
 const forecastContainer = document.getElementById('forecast');
 const searchHistoryContainer = document.getElementById('search-history');
+const titleForecast = document.getElementById('title-forecast');
 
 window.onload = function () {
   // get data from localstorage
@@ -82,7 +83,9 @@ function displayCurrentWeather(data1) {
   currentWeatherContainer.innerHTML = weatherInfo;
 }
 
+let isNewH3Added = false;
 function displayForecast(data) {
+  titleForecast.setAttribute("class","col text-center d-block");
 //  creat empty string
   let weatherInfo = '';
 
@@ -111,6 +114,28 @@ function displayForecast(data) {
 
   // add all days into weatherInfo
   forecastContainer.innerHTML = weatherInfo;
+
+
+  // // const newH3 = document.createElement('h3');
+  // // newH3.classList.add = "col text-center"
+  // // newH3.textContent = 'This is the next 5 day\'s forecast'; 
+
+  // // // Insert the new div between current-weather and forecast
+  // // const parentElement = forecastContainer.parentElement;
+  // // parentElement.insertBefore(newH3, forecastContainer);
+  // if (!isNewH3Added) {
+  //   // Create a new div element
+  //   const newH3 = document.createElement('h3');
+  //   newH3.textContent = 'This is the next 5 day\'s forecast'; // Replace 'New div content' with the desired content for the new div
+  //   newH3.classList.add('col text-center'); // Add the desired class name using classList.add()
+
+  //   // Insert the new div between current-weather and forecast
+  //   const parentElement = forecastContainer.parentElement;
+  //   parentElement.insertBefore(newH3, forecastContainer);
+
+  //   // 将 isNewDivAdded 标志设置为 true，表示已经添加了新的 div 元素
+  //   isNewH3Added = true;
+  // }
 }
 
 
@@ -149,6 +174,7 @@ function addToSearchHistory(city) {
 // get search history from localstorage
 function getData() {
   const searchHistory = localStorage.getItem("searchHistory");
+  // ? check if there has null or undefined
   return searchHistory ? JSON.parse(searchHistory) : [];
 }
 
