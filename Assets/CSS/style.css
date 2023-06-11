@@ -1,0 +1,23 @@
+*{
+    background-color: cornflowerblue;
+}
+
+h1{
+    display: block;
+    text-align: center;
+    background-color: rgb(62, 137, 191);
+}
+
+input{
+    background-color: white;
+}
+
+
+ul li a{
+    text-decoration: none;
+    color :black;
+}
+
+ul li a:hover{
+    color: white;
+}
